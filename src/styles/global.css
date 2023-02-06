@@ -17,20 +17,71 @@ body {
 
 h1 {
   margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: 4rem;
+  color: #800080;
 }
 
 .main-title {
-    color: #800080;
+  color: #800080;
 }
 
 .mainbird {
-    border-radius: 25px;
-    width: 250px
+  border-radius: 25px;
+  width: 250px;
 }
-
 
 .avatar {
   border-radius: 50%;
   height: 50px;
+}
+
+footer {
+  /* display: flex;
+    flex-direction: row; */
+  margin-top: 200px;
+}
+
+/* nav styles */
+
+.nav-links {
+  width: 100%;
+  top: 5rem;
+  left: 48px;
+  background-color: #ff9776;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+a:focus {
+  background-color: #ff9776;
+}
+
+.expanded {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
 }

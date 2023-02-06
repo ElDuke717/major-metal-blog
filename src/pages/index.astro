@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const pageTitle = 'FOSSBIRD';
 ---
 
 <html lang="en">
@@ -8,23 +13,18 @@ import '../styles/global.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>spaceMatcha</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <img
-      class="avatar"
-      src="/img/foss_bird.png"
-      alt="picture of a penguin at a computer"
-    />
-    <a href="../">HOME</a>
-    <a href="/about/">ABOUT</a>
-    <a href="/blog/">BLOG</a>
-    <h1 class="main-title">WELCOME TO FOSSBIRD</h1>
-    <img
-      class="mainbird"
-      src="img/foss_bird.png"
-      alt="a penguin using a computer"
-    />
-    <h1>A nonsensical name for a nonsensical site!</h1>
+    <Header/>
+    
+    <h1>WELCOME TO {pageTitle}</h1>
+	<img
+  class="mainbird"
+  src="img/foss_bird.png"
+  alt="a penguin using a computer"
+/>
+<h2>Please enjoy the writing on this site.  It is a blog with a meandering theme.</h2>
+<Footer/>
   </body>
 </html>
