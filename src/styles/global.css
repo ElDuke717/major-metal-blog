@@ -1,0 +1,36 @@
+html {
+  background-color: #f1f5f9;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+.main-title {
+    color: #800080;
+}
+
+.mainbird {
+    border-radius: 25px;
+    width: 250px
+}
+
+
+.avatar {
+  border-radius: 50%;
+  height: 50px;
+}

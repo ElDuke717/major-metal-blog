@@ -1,4 +1,7 @@
 ---
+import '../styles/global.css';
+
+const pageTitle = 'BLOG POSTS';
 ---
 
 <html lang="en">
@@ -7,11 +10,23 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>spaceMatcha</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
+    <img
+      class="avatar"
+      src="/img/foss_bird.png"
+      alt="picture of a penguin at a computer"
+    />
     <a href="../">HOME</a>
     <a href="/about/">ABOUT</a>
     <a href="/blog/">BLOG</a>
+    <h1>{pageTitle}</h1>
+    <p>This is where I will post about my journey learning Astro.</p>
+    <ul>
+      <li><a href="/posts/post-1/">Post 1</a></li>
+      <li><a href="/posts/post-2/">Post 2</a></li>
+      <li><a href="/posts/post-3/">Post 3</a></li>
+    </ul>
   </body>
 </html>

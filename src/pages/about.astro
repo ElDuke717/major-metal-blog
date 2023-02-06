@@ -1,4 +1,30 @@
 ---
+import '../styles/global.css';
+
+const pageTitle = 'ABOUT';
+
+const identity = {
+  firstName: 'FossBird',
+  country: 'US',
+  occupation: 'Web Developer, Hacker',
+  hobbies: ['walking', 'eating', 'computer'],
+};
+const skills = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Astro',
+  'Writing Docs',
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = '#263e66';
+const fontWeight = 'bold';
+const textCase = 'uppercase';
 ---
 
 <html lang="en">
@@ -7,14 +33,70 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>spaceMatcha</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
+    <img
+      class="avatar"
+      src="/img/foss_bird.png"
+      alt="picture of a penguin at a computer"
+    />
     <a href="../">HOME</a>
     <a href="/about/">ABOUT</a>
     <a href="/blog/">BLOG</a>
-    <h1>ABOUT</h1>
-    <h2>A bit about this experiment</h2>
+
+    <style define:vars={{ skillColor, fontWeight, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+      .avatar {
+        border-radius: 50%;
+        height: 50px;
+      }
+    </style>
+    <h1>{pageTitle}</h1>
+
+    <h2>What this is about</h2>
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}.</li>
+      <li>
+        I live in {identity.country} and I work as a {
+          identity.occupation
+        }.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.hobbies[0]} and{' '}
+            {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+
     <p>
       This is a new blog template to make a new site for writing. It's
       practice for my web development skills.
