@@ -25,7 +25,7 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = '#263e66';
+const skillColor = '#37fd12';
 const fontWeight = 'bold';
 const textCase = 'uppercase';
 ---
@@ -39,7 +39,7 @@ const textCase = 'uppercase';
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header/>
+    <Header />
 
     <style define:vars={{ skillColor, fontWeight, textCase }}>
       h1 {
@@ -117,6 +117,9 @@ const textCase = 'uppercase';
       </li>
       <li>This should all be anonymous</li>
     </ul>
-    <Footer/>
+    <Footer />
+    <script>
+      import '../scripts/menu.js';
+    </script>
   </body>
 </html>
