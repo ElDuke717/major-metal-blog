@@ -1,0 +1,16 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
+  <p>Published: {frontmatter.pubDate.slice(0, 10)}</p>
+  <p class="post-desc"><em>{frontmatter.description}</em></p>
+  <p class="post-author">Written by {frontmatter.author}</p>
+  <p class='tags'>{frontmatter.tags}</p>
+
+  <slot />
+</BaseLayout>

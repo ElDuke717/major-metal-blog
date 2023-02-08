@@ -36,9 +36,13 @@ h1 {
 }
 
 footer {
-  /* display: flex;
-    flex-direction: row; */
+  display: flex;
+  flex-direction: column;
   margin-top: 200px;
+}
+
+.post-desc {
+  font-style: italic;
 }
 
 /* nav styles */
@@ -52,7 +56,7 @@ footer {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ce0a45;
+  background-color: #800080;
 }
 
 .nav-links {
@@ -76,7 +80,8 @@ footer {
 
 .nav-links a:hover,
 a:focus {
-  background-color: #ce0a45;
+  background-color: hsla(295, 91%, 42%, 0.288);
+  border-radius: 25px;
 }
 
 .expanded {
@@ -85,7 +90,7 @@ a:focus {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
+    margin-left: 1em;
     display: block;
     position: static;
     width: auto;
@@ -95,6 +100,7 @@ a:focus {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+    border-radius: 25px;
   }
 
   .hamburger {

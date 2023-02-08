@@ -1,24 +1,11 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-
-const pageTitle = 'FOSSBIRD';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = 'HOME';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-
-    <h1>WELCOME TO {pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
+	<h1>{pageTitle}</h1>
+	<h2>WELCOME TO FOSSBIRD</h2>
     <img
       class="mainbird"
       src="img/foss_bird.png"
@@ -28,9 +15,4 @@ const pageTitle = 'FOSSBIRD';
       Please enjoy the writing on this site. It is a blog with a
       meandering theme.
     </h2>
-    <Footer />
-    <script>
-      import '../scripts/menu.js';
-    </script>
-  </body>
-</html>
+</BaseLayout>

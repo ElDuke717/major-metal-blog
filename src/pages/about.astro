@@ -1,9 +1,5 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'ABOUT';
 
 const identity = {
@@ -30,96 +26,81 @@ const fontWeight = 'bold';
 const textCase = 'uppercase';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-      .avatar {
-        border-radius: 50%;
-        height: 50px;
-      }
-    </style>
-    <h1>{pageTitle}</h1>
-
-    <h2>What this is about</h2>
-    <p>Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName}.</li>
-      <li>
-        I live in {identity.country} and I work as a {
-          identity.occupation
-        }.
-      </li>
+<BaseLayout pageTitle={pageTitle}>
+	<style define:vars={{ skillColor, fontWeight, textCase }}>
+        h1 {
+          color: purple;
+          font-size: 4rem;
+        }
+        .skill {
+          color: var(--skillColor);
+          font-weight: var(--fontWeight);
+          text-transform: var(--textCase);
+        }
+        .avatar {
+          border-radius: 50%;
+          height: 50px;
+        }
+      </style>
+      <h1>{pageTitle}</h1>
+  
+      <h2>What this is about</h2>
+      <p>Here are a few facts about me:</p>
+      <ul>
+        <li>My name is {identity.firstName}.</li>
+        <li>
+          I live in {identity.country} and I work as a {
+            identity.occupation
+          }.
+        </li>
+        {
+          identity.hobbies.length >= 2 && (
+            <li>
+              Two of my hobbies are: {identity.hobbies[0]} and{' '}
+              {identity.hobbies[1]}
+            </li>
+          )
+        }
+      </ul>
+      <p>My skills are:</p>
+      <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+      </ul>
+  
+      {happy && <p>I am happy to be learning Astro!</p>}
+  
+      {finished && <p>I finished this tutorial!</p>}
+  
       {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Two of my hobbies are: {identity.hobbies[0]} and{' '}
-            {identity.hobbies[1]}
-          </li>
+        goal === 3 ? (
+          <p>My goal is to finish in 3 days.</p>
+        ) : (
+          <p>My goal is not 3 days.</p>
         )
       }
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-
-    {happy && <p>I am happy to be learning Astro!</p>}
-
-    {finished && <p>I finished this tutorial!</p>}
-
-    {
-      goal === 3 ? (
-        <p>My goal is to finish in 3 days.</p>
-      ) : (
-        <p>My goal is not 3 days.</p>
-      )
-    }
-
-    <p>
-      This is a new blog template to make a new site for writing. It's
-      practice for my web development skills.
-    </p>
-    <p>
-      I've been out of the game for awhile, so need to do some more
-      development to make a page worth sharing.
-    </p>
-    <p>
-      I'm building this site from scratch to make everything more
-      clear again.
-    </p>
-    <h3>Here are some things that I plan to add:</h3>
-    <ul>
-      <li>An index page that links all the entries together</li>
-      <li>
-        Series of pages that will be individual blog entries. All will
-        have some of my writing in them.
-      </li>
-      <li>
-        I should probably write a bit about technology and my journey.
-      </li>
-      <li>This should all be anonymous</li>
-    </ul>
-    <Footer />
-    <script>
-      import '../scripts/menu.js';
-    </script>
-  </body>
-</html>
+  
+      <p>
+        This is a new blog template to make a new site for writing. It's
+        practice for my web development skills.
+      </p>
+      <p>
+        I've been out of the game for awhile, so need to do some more
+        development to make a page worth sharing.
+      </p>
+      <p>
+        I'm building this site from scratch to make everything more
+        clear again.
+      </p>
+      <h3>Here are some things that I plan to add:</h3>
+      <ul>
+        <li>An index page that links all the entries together</li>
+        <li>
+          Series of pages that will be individual blog entries. All will
+          have some of my writing in them.
+        </li>
+        <li>
+          I should probably write a bit about technology and my journey.
+        </li>
+        <li>This should all be anonymous</li>
+      </ul>
+</BaseLayout>
