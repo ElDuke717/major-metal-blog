@@ -3,9 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'ABOUT';
 
 const identity = {
-  firstName: 'FossBird',
+  firstName: 'Nick',
+  lastName: 'H',
   country: 'US',
-  occupation: 'Web Developer, Hacker',
+  occupation: 'Web Developer, Scientist',
   hobbies: ['walking', 'eating', 'computer'],
 };
 const skills = [
@@ -15,13 +16,15 @@ const skills = [
   'React',
   'Astro',
   'Writing Docs',
+  'Blogging',
+  'Linux'
 ];
 
 const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = '#37fd12';
+const skillColor = '#038c88';
 const fontWeight = 'bold';
 const textCase = 'uppercase';
 ---
@@ -44,7 +47,7 @@ const textCase = 'uppercase';
       </style>
       <h1>{pageTitle}</h1>
   
-      <h2>What this is about</h2>
+      <h2>About me, the author</h2>
       <p>Here are a few facts about me:</p>
       <ul>
         <li>My name is {identity.firstName}.</li>

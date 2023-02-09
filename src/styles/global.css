@@ -27,7 +27,8 @@ h1 {
 
 .mainbird {
   border-radius: 25px;
-  width: 250px;
+  max-width: 50%;
+  height: 50%;
 }
 
 .avatar {
@@ -43,6 +44,16 @@ footer {
 
 .post-desc {
   font-style: italic;
+}
+
+.intro-box {
+  display: flex;
+  align-items: top;
+}
+
+.intro-text {
+  margin: 20px;
+  width: 50%
 }
 
 /* nav styles */
