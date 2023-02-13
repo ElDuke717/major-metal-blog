@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Quotes from '../components/Quotes';
+import { quotes } from '../components/quoteList'
 const pageTitle = 'HOME';
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<h1>{pageTitle}</h1>
-	<h2>WELCOME!</h2>
+  
+  
   <div class="intro-box">
     <img
       class="mainbird"
@@ -13,11 +17,15 @@ const pageTitle = 'HOME';
       alt="a penguin using a computer"
     />
     <p class="intro-text">
-      This is my personal blog with a myriad of articles about any subject.  It's a place where I can share my thoughts and opinions on things, also hopefully a place where I can be influenced and stimulate a conversation.
+      This is my personal blog with a myriad of writings.  It's a place to share  my thoughts and opinions.
       <br />
       <br />
-      Please read and feel free to send me a message or comment about what you've read.  I will read them all and post those that add to the conversation.
+      I will read all comments sent to me and will add them to the conversation. All comments can be sent here:  fossbird@lightgreenmatcha.8shield.net.
+      <br />
+      <br />
+      <br />
+      While you're here, check out the quotes below.
     </p>
-  
   </div>
+  <Quotes client:load messages={quotes} />
 </BaseLayout>

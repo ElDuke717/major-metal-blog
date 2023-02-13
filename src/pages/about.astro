@@ -3,10 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'ABOUT';
 
 const identity = {
-  firstName: 'Nick',
+  firstName: 'Fossbird',
   lastName: 'H',
   country: 'US',
-  occupation: 'Web Developer, Scientist',
+  occupation: 'Web Developer and other things',
   hobbies: ['walking', 'eating', 'computer'],
 };
 const skills = [
@@ -17,7 +17,9 @@ const skills = [
   'Astro',
   'Writing Docs',
   'Blogging',
-  'Linux'
+  'Linux',
+  'chocolate',
+  'Node'
 ];
 
 const happy = true;
@@ -47,12 +49,12 @@ const textCase = 'uppercase';
       </style>
       <h1>{pageTitle}</h1>
   
-      <h2>About me, the author</h2>
+      <h2>For the curious.</h2>
       <p>Here are a few facts about me:</p>
       <ul>
         <li>My name is {identity.firstName}.</li>
         <li>
-          I live in {identity.country} and I work as a {
+          I live in the {identity.country} and I work as a {
             identity.occupation
           }.
         </li>
@@ -70,40 +72,8 @@ const textCase = 'uppercase';
         {skills.map((skill) => <li class="skill">{skill}</li>)}
       </ul>
   
-      {happy && <p>I am happy to be learning Astro!</p>}
+     <p>This site was build with <a href='ASTRO'>ASTRO</a>, a wonderful framework for building sites.</p>
+      
   
-      {finished && <p>I finished this tutorial!</p>}
-  
-      {
-        goal === 3 ? (
-          <p>My goal is to finish in 3 days.</p>
-        ) : (
-          <p>My goal is not 3 days.</p>
-        )
-      }
-  
-      <p>
-        This is a new blog template to make a new site for writing. It's
-        practice for my web development skills.
-      </p>
-      <p>
-        I've been out of the game for awhile, so need to do some more
-        development to make a page worth sharing.
-      </p>
-      <p>
-        I'm building this site from scratch to make everything more
-        clear again.
-      </p>
-      <h3>Here are some things that I plan to add:</h3>
-      <ul>
-        <li>An index page that links all the entries together</li>
-        <li>
-          Series of pages that will be individual blog entries. All will
-          have some of my writing in them.
-        </li>
-        <li>
-          I should probably write a bit about technology and my journey.
-        </li>
-        <li>This should all be anonymous</li>
-      </ul>
+      
 </BaseLayout>

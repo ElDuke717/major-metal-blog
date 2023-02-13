@@ -74,8 +74,9 @@ footer {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #ce0a45;
+  background-color: #9d9afd65;
   display: none;
+  justify-content: space-between;
   margin: 0;
 }
 
@@ -91,12 +92,33 @@ footer {
 
 .nav-links a:hover,
 a:focus {
-  background-color: hsla(295, 91%, 42%, 0.288);
+  background-color: #9d9afd65;
   border-radius: 25px;
 }
 
 .expanded {
   display: unset;
+}
+
+.change.button {
+  color: #0d9b92;
+  border: 1px solid #800080;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #d7d6f3;
+  padding: 10px;
+}
+
+
+/* Light and Dark Themes */
+
+.dark body {
+  background-color: #121214;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }
 
 @media screen and (min-width: 636px) {
